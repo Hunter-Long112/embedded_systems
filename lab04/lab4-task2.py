@@ -22,9 +22,13 @@ cmd = mySerialComm.Commands()
 cmd.setup_connection(9600)
 cmd.handshake_prizm()
 
+start_time = time.time()
+
 cmd.drive_forward(15)
 
 while True:
+    if (time.time() - start_time) > 120:
+        exit(0)
     cmd.execute_command()
     cmd.read_sonic_sensor()
     if cmd.sonic_distance < 10:
@@ -47,4 +51,3 @@ while True:
         
     else:
         cmd.drive_forward(15)
-        

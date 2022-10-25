@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/env python
 
 # Authors: Hunter Long (mia014) and Ryan Gill (jie134)
